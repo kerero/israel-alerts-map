@@ -1,0 +1,62 @@
+{
+    "extensions": [
+		"dbaeumer.vscode-eslint",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"esbenp.prettier-vscode",
+		"bierner.color-info",
+		"jpoissonnier.vscode-styled-components",
+		"visualstudioexptteam.vscodeintellicode",
+		"eg2.vscode-npm-script",
+		"christian-kohler.npm-intellisense",
+		"cssho.vscode-svgviewer",
+		"eamodio.gitlens",
+		"ms-azuretools.vscode-docker",
+		"shardulm94.trailing-spaces",
+		"davidanson.vscode-markdownlint",
+		"IBM.output-colorizer",
+		"Gruntfuggly.todo-tree",
+		"stkb.rewrap",
+	],
+    "settings": {
+		"terminal.integrated.defaultProfile.linux": "/bin/bash",
+		"files.eol": "\n",
+		"editor.tabSize": 2,
+		"remote.extensionKind": {
+			"ms-azuretools.vscode-docker": "workspace"
+		},
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"eslint.validate": [
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact"
+		],
+		"editor.formatOnSave": true,
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": false
+		},
+		"[javascriptreact]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": false
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": false
+		},
+		"[typescriptreact]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": false
+		},
+		"prettier-eslint.eslintIntegration": true
+	},
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "16"
+		}
+	},
+	"remoteUser": "node"
+}
