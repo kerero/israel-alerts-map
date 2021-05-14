@@ -10,12 +10,12 @@
 		"christian-kohler.npm-intellisense",
 		"cssho.vscode-svgviewer",
 		"eamodio.gitlens",
-		"ms-azuretools.vscode-docker",
 		"shardulm94.trailing-spaces",
 		"davidanson.vscode-markdownlint",
 		"IBM.output-colorizer",
 		"Gruntfuggly.todo-tree",
 		"stkb.rewrap",
+		"mhutchie.git-graph",
 	],
     "settings": {
 		"terminal.integrated.defaultProfile.linux": "/bin/bash",
