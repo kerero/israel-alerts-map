@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -17,12 +18,25 @@
     },
     "plugins": [
         "react",
+        "jest-react",
         "react-hooks",
         "@typescript-eslint"
     ],
     "rules": {
         "semi": ["error", "never"],
         "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
-        "react/jsx-one-expression-per-line": "off"
+        "react/jsx-one-expression-per-line": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "no-use-before-define": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            { "ts": "never", "tsx": "never" }
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
     }
 }
