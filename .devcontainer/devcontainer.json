@@ -16,6 +16,7 @@
 		"Gruntfuggly.todo-tree",
 		"stkb.rewrap",
 		"mhutchie.git-graph",
+		"streetsidesoftware.code-spell-checker",
 	],
     "settings": {
 		"terminal.integrated.defaultProfile.linux": "/bin/bash",
