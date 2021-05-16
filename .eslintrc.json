@@ -30,6 +30,8 @@
         "no-use-before-define": "off",
         "react/jsx-props-no-spreading": "off",
         "no-unused-vars": "warn",
+        "react/no-unused-state": "warn",
+        "react/destructuring-assignment": "off",
         "import/extensions": [
             "error",
             "ignorePackages",
