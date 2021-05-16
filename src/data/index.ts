@@ -39,7 +39,7 @@ export /* async */ function loadAlertData(start: Date, end: Date): /* Promise< *
   return alertData
 }
 
-export function prepereGeoData(alertData: object):
+export function prepareGeoData(alertData: object):
 { data: object; failedMappings: number; successfulMapping: number } {
   let failedMappings = 0
   let successfulMapping = 0
