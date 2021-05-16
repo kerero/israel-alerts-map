@@ -29,7 +29,7 @@ export default function AlertsHeatMap(props) {
                 [62, 1],
               ],
             },
-            'heatmap-radius': 50,
+            'heatmap-radius': 40,
             'heatmap-opacity': 0.3,
           },
         }}
