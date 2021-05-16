@@ -1,5 +1,9 @@
 {
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "yarn",
+  "cSpell.words": [
+    "MAPBOX",
+    "datetime"
+  ]
 }

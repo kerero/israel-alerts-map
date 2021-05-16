@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
+    "updateAlertsHisory": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' src/data/updateAlertsHistory.ts",
     "lint": "eslint --ext .tsx --ext .ts .",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -29,13 +30,13 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@wojtekmaj/react-daterange-picker": "^3.1.0",
     "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-map-gl": "^6.1.15",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "typescript": "^4.1.2"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",

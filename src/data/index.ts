@@ -1,19 +1,31 @@
 /* eslint-disable no-param-reassign */
-import axios from 'axios'
-import cities from './cities.geo.json'
+
+import citiesGeoJson from './cities.geo.json'
 import alertsMock from './alertsHistory.json'
 
-export async function loadAlertData(): Promise<object> {
+export function getAlertsDateRange() {
+  return {
+    end: new Date(alertsMock[0].datetime),
+    start: new Date(alertsMock[alertsMock.length - 1].datetime),
+  }
+}
+
+export /* async */ function loadAlertData(start: Date, end: Date): /* Promise< */object/* > */ {
   // const LANG = 'he'
   // const url = `https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=${LANG}&mode=3`
   // const corsWrapper = `http://www.whateverorigin.org/get?url=${url}`
-  const alertHistory: any = Object.values(alertsMock) // (await axios.get(corsWrapper))
+  let alertHistory: any[] = Object.values(alertsMock) // (await axios.get(corsWrapper))
+  if (start && end) {
+    alertHistory = alertHistory.filter((alert) => {
+      const alertDate = new Date(alert.datetime)
+      return alertDate >= start && alertDate <= end
+    })
+  }
+
   const alertData = {}
   alertHistory.forEach((e: any) => {
     let name: string = e.data || ''
     name = name.split(', ')[0]
-      // .split(' - ')[0] // try to take top hierarchy in hierarchical zones
-      // .replaceAll('-', ' ') // remove difference in writing styles
       .replaceAll("''", '"')
       .replace(' והפזורה', '')
     if (name.includes('אשקלון')) name = 'אשקלון'
@@ -31,8 +43,8 @@ export function prepereGeoData(alertData: object):
 { data: object; failedMappings: number; successfulMapping: number } {
   let failedMappings = 0
   let successfulMapping = 0
-  // eslint-disable-next-line no-return-assign
-  cities.features.forEach((c: any) => c.properties.count = 0)
+  const cities = JSON.parse(JSON.stringify(citiesGeoJson))
+
   Object.keys(alertData).forEach((l) => {
     const geoCity = cities.features.find((c) => c.properties.name === l
         || c.properties.name.replace(' ', '').split('-')[0] === l.replace(' ', '') // try to map cities with different hyphen and spacing arrangements
@@ -47,8 +59,8 @@ export function prepereGeoData(alertData: object):
     }
   })
 
+  cities.features = cities.features.filter((c: any) => c.properties.count)
+
   console.log(`mapped: ${successfulMapping}, Unmapped: ${failedMappings}`)
   return { data: cities, failedMappings, successfulMapping }
 }
-
-loadAlertData().then((d) => prepereGeoData(d))
