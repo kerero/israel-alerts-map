@@ -1,5 +1,6 @@
 .infoText {
   margin: 0;
+  margin-left: 5px;
   display: inline-block;
 }
 .datePicker {
@@ -10,7 +11,15 @@
 
 .absolutePosition {
   position: absolute;
+  width: 95%;
   z-index: 1000;
+}
+.flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
 }
 
 .tooltip {
@@ -51,4 +60,9 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.datePickerContainer {
+  margin-top: 10px;
+  z-index: 99999999;
 }
