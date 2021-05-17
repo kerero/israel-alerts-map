@@ -28,25 +28,17 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/mapbox-gl": "^2.1.2",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@wojtekmaj/react-daterange-picker": "^3.1.0",
-    "axios": "^0.21.1",
     "chart.js": "^3.2.1",
-    "mapbox-gl": "^2.2.0",
     "react": "^17.0.2",
     "react-chartjs-2": "^3.0.3",
     "react-dom": "^17.0.2",
-    "react-map-gl": "^6.1.15",
+    "react-map-gl": "5",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "worker-loader": "^3.0.8"
+    "typescript": "^4.1.2"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
@@ -62,6 +54,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "axios": "^0.21.1"
   }
 }
