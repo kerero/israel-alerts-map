@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/israel-alerts-map/static/css/main.abe6ce44.chunk.css",
+    "main.css": "/israel-alerts-map/static/css/main.1a5aeb26.chunk.css",
     "main.js": "/israel-alerts-map/static/js/main.7341e2d1.chunk.js",
     "main.js.map": "/israel-alerts-map/static/js/main.7341e2d1.chunk.js.map",
     "runtime-main.js": "/israel-alerts-map/static/js/runtime-main.7ef4c8f3.js",
@@ -10,14 +10,14 @@
     "static/js/2.56334571.chunk.js.map": "/israel-alerts-map/static/js/2.56334571.chunk.js.map",
     "index.html": "/israel-alerts-map/index.html",
     "static/css/2.77f7e7a1.chunk.css.map": "/israel-alerts-map/static/css/2.77f7e7a1.chunk.css.map",
-    "static/css/main.abe6ce44.chunk.css.map": "/israel-alerts-map/static/css/main.abe6ce44.chunk.css.map",
+    "static/css/main.1a5aeb26.chunk.css.map": "/israel-alerts-map/static/css/main.1a5aeb26.chunk.css.map",
     "static/js/2.56334571.chunk.js.LICENSE.txt": "/israel-alerts-map/static/js/2.56334571.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7ef4c8f3.js",
     "static/css/2.77f7e7a1.chunk.css",
     "static/js/2.56334571.chunk.js",
-    "static/css/main.abe6ce44.chunk.css",
+    "static/css/main.1a5aeb26.chunk.css",
     "static/js/main.7341e2d1.chunk.js"
   ]
 }
