@@ -1,5 +1,13 @@
 import React, { useState } from 'react'
 import MapGL, { Source, Layer } from 'react-map-gl'
+// import mapboxgl from 'mapbox-gl'
+import mapboxgl2 from 'mapbox-gl/dist/mapbox-gl'
+import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker'
+
+mapboxgl2.workerClass = MapboxWorker
+
+// eslint-disable-next-line
+//(mapboxgl as any).workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default
 
 export default function AlertsHeatMap(props) {
   const [viewport, setViewport] = useState({

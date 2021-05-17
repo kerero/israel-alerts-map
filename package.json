@@ -8,13 +8,18 @@
     "lint": "eslint --ext .tsx --ext .ts .",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "http://OriKerer.github.io/israel-alerts-map",
   "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not ie 11",
+      "not chrome < 51",
+      "not safari < 10"
     ],
     "development": [
       "last 1 chrome version",
@@ -27,18 +32,21 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
+    "@types/mapbox-gl": "^2.1.2",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@wojtekmaj/react-daterange-picker": "^3.1.0",
     "axios": "^0.21.1",
     "chart.js": "^3.2.1",
+    "mapbox-gl": "^2.2.0",
     "react": "^17.0.2",
     "react-chartjs-2": "^3.0.3",
     "react-dom": "^17.0.2",
     "react-map-gl": "^6.1.15",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
@@ -53,6 +61,7 @@
     "eslint-plugin-jest-react": "^0.0.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.1.0"
   }
 }
