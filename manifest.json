@@ -1,0 +1,20 @@
+{
+  "short_name": "Israel Alerts Map",
+  "name": "Israel Alerts History Map",
+  "icons": [
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "avicon-194x194.png",
+      "type": "image/png",
+      "sizes": "194x194 64x64"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
