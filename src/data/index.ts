@@ -1,42 +1,50 @@
 /* eslint-disable no-param-reassign */
 
 import citiesGeoJson from './cities.geo.json'
-import alertsMock from './alertsHistory.json'
+import localAlertsData from './alertsHistory.json'
 
 export function getAlertsDateRange() {
   return {
-    end: new Date(alertsMock[0].datetime),
-    start: new Date(alertsMock[alertsMock.length - 1].datetime),
+    end: new Date(localAlertsData[0].datetime),
+    start: new Date(localAlertsData[localAlertsData.length - 1].datetime),
   }
 }
 
-export /* async */ function loadAlertData(start: Date, end: Date): /* Promise< */object/* > */ {
+export function loadAlertData(start: Date, end: Date): Record<string, number> {
   // const LANG = 'he'
   // const url = `https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=${LANG}&mode=3`
   // const corsWrapper = `http://www.whateverorigin.org/get?url=${url}`
-  let alertHistory: any[] = Object.values(alertsMock) // (await axios.get(corsWrapper))
+
+  // !! load data locally, oref.org.il is only accessible within israel
+  // May use `npm run updateAlertHistory` to update local data
+  let alertsHistory: any[] = Object.values(localAlertsData) // (await axios.get(corsWrapper))
+
+  // filter relevant dates
   if (start && end) {
-    alertHistory = alertHistory.filter((alert) => {
+    alertsHistory = alertsHistory.filter((alert) => {
       const alertDate = new Date(alert.datetime)
       return alertDate >= start && alertDate <= end
     })
   }
 
-  const alertData = {}
-  alertHistory.forEach((e: any) => {
-    let name: string = e.data || ''
+  const alertsCount = {}
+  alertsHistory.forEach((e: any) => {
+    let name: string = e.data || '' // avert bad data
+
+    // Try to standardize cities names
     name = name.split(', ')[0]
       .replaceAll("''", '"')
       .replace(' והפזורה', '')
     if (name.includes('אשקלון')) name = 'אשקלון'
 
-    if (alertData[name]) {
-      alertData[name] += 1
+    if (alertsCount[name]) {
+      alertsCount[name] += 1
     } else {
-      alertData[name] = 1
+      alertsCount[name] = 1
     }
   })
-  return alertData
+
+  return alertsCount
 }
 
 export function prepareGeoData(alertData: object):
@@ -55,12 +63,10 @@ export function prepareGeoData(alertData: object):
       successfulMapping += alertData[l]
     } else {
       failedMappings += alertData[l]
-      console.log(`Could not map '${l}' alerts#: ${alertData[l]}`)
     }
   })
 
   cities.features = cities.features.filter((c: any) => c.properties.count)
 
-  console.log(`mapped: ${successfulMapping}, Unmapped: ${failedMappings}`)
   return { data: cities, failedMappings, successfulMapping }
 }

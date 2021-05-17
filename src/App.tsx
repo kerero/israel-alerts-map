@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import DateRange from '@wojtekmaj/react-daterange-picker'
-import { Bar } from 'react-chartjs-2'
 import AlertsHeatMap from './HeatMap'
 import './App.css'
 import { getAlertsDateRange, loadAlertData, prepareGeoData } from './data'

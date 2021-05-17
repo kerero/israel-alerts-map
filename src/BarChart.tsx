@@ -4,15 +4,37 @@ import React, { useState, useRef } from 'react'
 import { Bar } from 'react-chartjs-2'
 import './BarCharts.css'
 
+const DATA_LENGTH_LIMIT = 50
+const chartOptions = {
+  maintainAspectRatio: false,
+  indexAxis: 'y',
+  elements: {
+    bar: {
+      borderWidth: 2,
+    },
+  },
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: `Alerts per City (Top ${DATA_LENGTH_LIMIT})`,
+    },
+  },
+}
+
 export default function AlertsBarChart({ alertData }) {
   const [value, set] = useState({ active: false })
   const contentRef = useRef<HTMLDivElement>()
+  const splicedAlertData = alertData.slice(0, 100)
   const chartData = {
-    labels: alertData.map((o) => o[0]),
+    labels: splicedAlertData.map((o) => o[0]),
     datasets: [
       {
         label: '# of Alerts',
-        data: alertData.map((o) => o[1]),
+        data: splicedAlertData.map((o) => o[1]),
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -33,27 +55,7 @@ export default function AlertsBarChart({ alertData }) {
       },
     ],
   }
-  const chartOptions = {
-    maintainAspectRatio: false,
-    indexAxis: 'y',
-    // Elements options apply to all of the options unless overridden in a dataset
-    // In this case, we are setting the border of each horizontal bar to be 2px wide
-    elements: {
-      bar: {
-        borderWidth: 2,
-      },
-    },
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Alerts per City',
-      },
-    },
-  }
+
   return (
     <div className="rootContainer">
       <div
@@ -81,7 +83,7 @@ export default function AlertsBarChart({ alertData }) {
 
       </div>
       <div className="chartContainer content" ref={contentRef as React.RefObject<HTMLDivElement>}>
-        <div className="chart" style={{ height: `${Object.keys(alertData).length * 10 + 300}px` }}>
+        <div className="chart" style={{ height: `${Object.keys(splicedAlertData).length * 20 + 300}px` }}>
           <Bar
             data={chartData}
             options={chartOptions}

@@ -11,4 +11,4 @@ axios.get(url).then((res) => {
   const newAlerts = (res.data as any[]).filter((v) => (new Date(v.datetime) > mostRecent))
   const mergedAlerts = newAlerts.concat(alertHistory)
   fs.writeFileSync(`${__dirname}/alertsHistory.json`, JSON.stringify(mergedAlerts))
-}).catch((e) => console.log(JSON.stringify(e)))
+}).catch((e) => console.log(JSON.stringify(e))) // eslint-disable-line no-console
