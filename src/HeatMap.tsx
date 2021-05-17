@@ -13,7 +13,8 @@ export default function AlertsHeatMap(props) {
       width="100%"
       height="100vh"
       maxZoom={9.5}
-      minZoom={8.5}
+      minZoom={8}
+      mapStyle="mapbox://styles/mapbox/light-v10"
       onViewportChange={setViewport}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
     >
@@ -29,7 +30,7 @@ export default function AlertsHeatMap(props) {
                 [62, 1],
               ],
             },
-            'heatmap-radius': 40,
+            'heatmap-radius': 30 + (viewport.zoom - 8) * 10,
             'heatmap-opacity': 0.3,
           },
         }}
