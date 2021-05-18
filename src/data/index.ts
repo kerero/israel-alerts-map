@@ -55,9 +55,10 @@ export function prepareGeoData(alertData: object):
 
   Object.keys(alertData).forEach((l) => {
     const geoCity = cities.features.find((c) => c.properties.name === l
-        || c.properties.name.replace(' ', '').split('-')[0] === l.replace(' ', '') // try to map cities with different hyphen and spacing arrangements
+        || c.properties.name.replaceAll(' ', '').split('-')[0] === l.replaceAll(' ', '') // try to map cities with different hyphen and spacing arrangements
         || c.properties.name === l.split(' ו')[0] // Try to map coupled cities
-        || c.properties.name === l.split(' תעשייה ')[1] /* Try to map industrial parks/zones */) as any
+        || c.properties.name === l.split(' תעשייה ')[1] /* Try to map industrial parks/zones */
+        || c.properties.name.replaceAll(' ', '') === l.replaceAll(' ', '').split('-')[0]) as any
     if (geoCity) {
       geoCity.properties.count = alertData[l]
       successfulMapping += alertData[l]
