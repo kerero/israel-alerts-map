@@ -12,8 +12,8 @@ export default function AlertsHeatMap(props) {
       {...viewport}
       width="100%"
       height="100vh"
-      maxZoom={9.5}
-      minZoom={8}
+      maxZoom={11}
+      minZoom={7.5}
       mapStyle="mapbox://styles/mapbox/light-v10"
       onViewportChange={setViewport}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
