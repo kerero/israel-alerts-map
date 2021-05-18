@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "updateAlertsHisory": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' src/data/updateAlertsHistory.ts",
+    "updateAlertsHistory": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' src/data/updateAlertsHistory.ts",
     "lint": "eslint --ext .tsx --ext .ts .",
     "build": "react-scripts build",
     "test": "react-scripts test",

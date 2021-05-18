@@ -1,5 +1,5 @@
 // This is a server side script
-import axios from 'axios'
+import axios from 'axios' // eslint-disable-line import/no-extraneous-dependencies
 import fs from 'fs'
 import alertHistory from './alertsHistory.json'
 

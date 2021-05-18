@@ -8,7 +8,7 @@ import BarChart from './BarChart'
 export default function App() {
   const alertsDateRange = getAlertsDateRange()
   const threeDaysBack = new Date(alertsDateRange.end)
-  threeDaysBack.setDate(threeDaysBack.getDate() - 3)
+  threeDaysBack.setDate(threeDaysBack.getDate() - 4)
 
   const [value, onChange] = useState([threeDaysBack, alertsDateRange.end])
 
