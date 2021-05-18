@@ -1,7 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useRef } from 'react'
-import { Bar } from 'react-chartjs-2'
+import { Bar, Chart } from 'react-chartjs-2'
 import './BarCharts.css'
 
 const DATA_LENGTH_LIMIT = 50
@@ -25,7 +26,30 @@ const chartOptions = {
   },
 }
 
+const labelsPlugin = {
+  id: 'labelsPlugin',
+  afterDraw: (chart) => {
+    // @ts-ignore
+    const { ctx } = chart
+    ctx.font = '12px Verdana'
+    ctx.fillStyle = '#000000'
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'bottom'
+    // @ts-ignore
+    chart.config.data.datasets.forEach((dataset) => {
+      if (dataset.type === 'bar') {
+        const dataArray = dataset.data
+        chart._metasets[0].data.forEach((bar, index) => {
+          ctx.fillText(dataArray[index], bar.x + 10, bar.y + 8)
+        })
+      }
+    })
+  },
+}
+
 export default function AlertsBarChart({ alertData }) {
+  // @ts-ignore
+  Chart.register(labelsPlugin)
   const [value, set] = useState({ active: false })
   const contentRef = useRef<HTMLDivElement>()
   const splicedAlertData = alertData.slice(0, 100)
@@ -33,6 +57,7 @@ export default function AlertsBarChart({ alertData }) {
     labels: splicedAlertData.map((o) => o[0]),
     datasets: [
       {
+        type: 'bar',
         label: '# of Alerts',
         data: splicedAlertData.map((o) => o[1]),
         backgroundColor: [
@@ -85,6 +110,7 @@ export default function AlertsBarChart({ alertData }) {
       <div className="chartContainer content" ref={contentRef as React.RefObject<HTMLDivElement>}>
         <div className="chart" style={{ height: `${Object.keys(splicedAlertData).length * 20 + 300}px` }}>
           <Bar
+            plugins={[labelsPlugin]}
             data={chartData}
             options={chartOptions}
             type=""
