@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/israel-alerts-map/static/css/main.42510f27.chunk.css",
-    "main.js": "/israel-alerts-map/static/js/main.dfd521b1.chunk.js",
-    "main.js.map": "/israel-alerts-map/static/js/main.dfd521b1.chunk.js.map",
+    "main.js": "/israel-alerts-map/static/js/main.e6e2a411.chunk.js",
+    "main.js.map": "/israel-alerts-map/static/js/main.e6e2a411.chunk.js.map",
     "runtime-main.js": "/israel-alerts-map/static/js/runtime-main.7ef4c8f3.js",
     "runtime-main.js.map": "/israel-alerts-map/static/js/runtime-main.7ef4c8f3.js.map",
     "static/css/2.77f7e7a1.chunk.css": "/israel-alerts-map/static/css/2.77f7e7a1.chunk.css",
-    "static/js/2.88aa9fcc.chunk.js": "/israel-alerts-map/static/js/2.88aa9fcc.chunk.js",
-    "static/js/2.88aa9fcc.chunk.js.map": "/israel-alerts-map/static/js/2.88aa9fcc.chunk.js.map",
+    "static/js/2.29183ea5.chunk.js": "/israel-alerts-map/static/js/2.29183ea5.chunk.js",
+    "static/js/2.29183ea5.chunk.js.map": "/israel-alerts-map/static/js/2.29183ea5.chunk.js.map",
     "index.html": "/israel-alerts-map/index.html",
     "static/css/2.77f7e7a1.chunk.css.map": "/israel-alerts-map/static/css/2.77f7e7a1.chunk.css.map",
     "static/css/main.42510f27.chunk.css.map": "/israel-alerts-map/static/css/main.42510f27.chunk.css.map",
-    "static/js/2.88aa9fcc.chunk.js.LICENSE.txt": "/israel-alerts-map/static/js/2.88aa9fcc.chunk.js.LICENSE.txt"
+    "static/js/2.29183ea5.chunk.js.LICENSE.txt": "/israel-alerts-map/static/js/2.29183ea5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7ef4c8f3.js",
     "static/css/2.77f7e7a1.chunk.css",
-    "static/js/2.88aa9fcc.chunk.js",
+    "static/js/2.29183ea5.chunk.js",
     "static/css/main.42510f27.chunk.css",
-    "static/js/main.dfd521b1.chunk.js"
+    "static/js/main.e6e2a411.chunk.js"
   ]
 }
