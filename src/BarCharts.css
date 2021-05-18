@@ -18,7 +18,7 @@
 }
 
 .collapsible {
-  background-color: #777;
+  background-color: rgba(40, 40, 40, 0.5);
   color: white;
   cursor: pointer;
   border: none;
@@ -29,9 +29,8 @@
   border-radius: 9px;
 }
 
-.active,
 .collapsible:hover {
-  background-color: #555;
+  background-color: rgba(40, 40, 40, 0.7);
 }
 
 .content {

@@ -7,7 +7,10 @@ import BarChart from './BarChart'
 
 export default function App() {
   const alertsDateRange = getAlertsDateRange()
-  const [value, onChange] = useState([alertsDateRange.start, alertsDateRange.end])
+  const threeDaysBack = new Date(alertsDateRange.end)
+  threeDaysBack.setDate(threeDaysBack.getDate() - 3)
+
+  const [value, onChange] = useState([threeDaysBack, alertsDateRange.end])
 
   const alertData = loadAlertData(value[0], value[1])
   const geoData = prepareGeoData(alertData)
