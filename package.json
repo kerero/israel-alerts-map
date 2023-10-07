@@ -12,7 +12,7 @@
     "predeploy": "npm run updateAlertsHistory && npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://OriKerer.github.io/israel-alerts-map",
+  "homepage": "http://kerero.github.io/israel-alerts-map",
   "browserslist": {
     "production": [
       ">0.2%",

@@ -2,7 +2,7 @@
 
 This site Shows a heatmap of "red" alerts history in israel and some statistics
 
-## [Live Site](http://OriKerer.github.io/israel-alerts-map)
+## [Live Site](http://kerero.github.io/israel-alerts-map)
 
 ## Alerts Data
 
