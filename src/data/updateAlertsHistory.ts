@@ -7,13 +7,13 @@ const url = `https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=${L
 const jsonPath = `${__dirname}/alertsHistory.json`
 
 if (!fs.existsSync(jsonPath)) {
-  fs.writeFileSync(jsonPath, '[{"datetime": "1970-01-01T00:00:00.000Z"}]')
+  fs.writeFileSync(jsonPath, '[{"alertDate": "1970-01-01T00:00:00.000Z"}]')
 }
 
 axios.get(url).then((res) => {
   const alertHistory = require(jsonPath) // eslint-disable-line
-  const mostRecent = new Date(alertHistory[0].datetime)
-  const newAlerts = (res.data as any[]).filter((v) => (new Date(v.datetime) > mostRecent))
+  const mostRecent = new Date(alertHistory[0].alertDate)
+  const newAlerts = (res.data as any[]).filter((v) => (new Date(v.alertDate) > mostRecent))
   const mergedAlerts = newAlerts.concat(alertHistory)
   fs.writeFileSync(jsonPath, JSON.stringify(mergedAlerts))
 }).catch((e) => console.log(JSON.stringify(e))) // eslint-disable-line no-console

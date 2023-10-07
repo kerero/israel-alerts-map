@@ -5,8 +5,8 @@ import localAlertsData from './alertsHistory.json'
 
 export function getAlertsDateRange() {
   return {
-    end: new Date(localAlertsData[0].datetime),
-    start: new Date(localAlertsData[localAlertsData.length - 1].datetime),
+    end: new Date(localAlertsData[0].alertDate),
+    start: new Date(localAlertsData[localAlertsData.length - 1].alertDate),
   }
 }
 
@@ -22,7 +22,7 @@ export function loadAlertData(start: Date, end: Date): Record<string, number> {
   // filter relevant dates
   if (start && end) {
     alertsHistory = alertsHistory.filter((alert) => {
-      const alertDate = new Date(alert.datetime)
+      const alertDate = new Date(alert.alertDate)
       return alertDate >= start && alertDate <= end
     })
   }
