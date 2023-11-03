@@ -8,7 +8,7 @@ import BarChart from './BarChart'
 export default function App() {
   const alertsDateRange = getAlertsDateRange()
   const oneWeekBack = new Date(alertsDateRange.end)
-  oneWeekBack.setDate(oneWeekBack.getDate() - 7) // get last week
+  oneWeekBack.setDate(oneWeekBack.getDate() - 6) // get last week
 
   const [value, onChange] = useState([oneWeekBack, alertsDateRange.end])
 
