@@ -3,7 +3,8 @@ import axios from 'axios' // eslint-disable-line import/no-extraneous-dependenci
 import fs from 'fs'
 
 const LANG = 'he'
-const url = `https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=${LANG}&mode=3`
+// const url = `https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=${LANG}&mode=3`
+const url = `https://alerts-history.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=${LANG}&mode=3`
 const jsonPath = `${__dirname}/alertsHistory.json`
 
 if (!fs.existsSync(jsonPath)) {
